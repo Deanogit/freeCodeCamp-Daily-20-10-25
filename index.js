@@ -9,9 +9,23 @@
 function calculateTips(mealPrice, customTip) {
   console.log(mealPrice, customTip);
 
-  // sanitise price
-  const priceRegex = /([0-9\.]+)/g;
-  const arr = mealPrice.matchAll(priceRegex);
+  // sanitise price and custom
+  // const priceRegex = /([0-9\.]+)/g
+  // const arr = mealPrice.matchAll(priceRegex)
+  const price = parseFloat(mealPrice.slice(1));
+  console.log(price);
 
+  const custom = parseFloat(customTip) / 100;
+  console.log(custom);
+
+  // return
+  const returnArr = [];
+  returnArr.push(
+    `$${(price * 0.15).toFixed(2)}`,
+    `$${(price * 0.2).toFixed(2)}`,
+    `$${(price * custom).toFixed(2)}`
+  );
+  console.log(returnArr);
+  return returnArr;
   // return mealPrice;
 }
