@@ -18,14 +18,16 @@ function calculateTips(mealPrice, customTip) {
   const custom = parseFloat(customTip) / 100;
   console.log(custom);
 
+  // map an array of percentages
+  return [0.15, 0.2, custom].map((percent) => {
+    return `$${(price * percent).toFixed(2)}`;
+  });
+
   // return
-  const returnArr = [];
-  returnArr.push(
-    `$${(price * 0.15).toFixed(2)}`,
-    `$${(price * 0.2).toFixed(2)}`,
-    `$${(price * custom).toFixed(2)}`
-  );
-  console.log(returnArr);
-  return returnArr;
+  // const returnArr = [];
+  // returnArr.push(`$${(price * 0.15).toFixed(2)}`, `$${(price * .2).toFixed(2)}`, `$${(price * custom).toFixed(2)}`)
+  //  console.log(returnArr)
+
+  //  return returnArr
   // return mealPrice;
 }
