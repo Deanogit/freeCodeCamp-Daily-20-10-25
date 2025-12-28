@@ -5,3 +5,13 @@
 // Custom tip percents will be given in this format: "25%".
 // Return amounts in the same "$N.NN" format, rounded to two decimal places.
 // For example, given a "$10.00" meal price, and a "25%" custom tip value, return ["$1.50", "$2.00", "$2.50"].
+
+function calculateTips(mealPrice, customTip) {
+  console.log(mealPrice, customTip);
+
+  // sanitise price
+  const priceRegex = /([0-9\.]+)/g;
+  const arr = mealPrice.matchAll(priceRegex);
+
+  // return mealPrice;
+}
